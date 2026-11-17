@@ -1,0 +1,43 @@
+.stats-grid {
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 20px; 
+}
+
+.stat-card {
+    background-color: #1e1b2f;
+    border: 1px solid #2d2844; 
+    border-radius: 12px; 
+    padding: 20px; 
+    transition: transform 0.3s;
+}
+
+.stat-card:hover { 
+    transform: translateY(-5px); 
+    border-color: #8b5cf6; 
+}
+
+.stat-card h3 {
+    font-size: 0.9rem; 
+    color: #a09eb0; 
+    margin-bottom: 10px;
+}
+
+.stat-card p { 
+    font-size: 2rem; 
+    font-weight: 700; 
+}
+
+.text-warning { 
+    color: #f59e0b;
+}
+
+@keyframes slideUp { 
+    from { opacity: 0; transform: translateY(20px); } 
+    to { opacity: 1; transform: translateY(0); } 
+}
+
+.fade-up { 
+    animation: slideUp 0.5s ease forwards; 
+    opacity: 0; 
+}
