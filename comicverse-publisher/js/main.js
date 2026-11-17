@@ -68,17 +68,29 @@ document.addEventListener('DOMContentLoaded', () => {
             };
         } 
         
-        else if (pageName === 'upload') {
-            // Toggle upload type
+         else if (pageName === 'upload') {
             window.toggleUploadType = (type) => {
-                document.getElementById('comic-upload').style.display = type === 'comic' ? 'block' : 'none';
-                document.getElementById('novel-upload').style.display = type === 'novel' ? 'block' : 'none';
+                const comicDiv = document.getElementById('comic-upload');
+                const novelDiv = document.getElementById('novel-upload');
+
+                if (type === 'comic') {
+                    comicDiv.classList.remove('hidden');
+                    novelDiv.classList.add('hidden');
+                } else {
+                    comicDiv.classList.add('hidden');
+                    novelDiv.classList.remove('hidden');
+                }
             };
 
-            // Toggle schedule date
-            window.toggleScheduleDate = () => {
+             window.toggleScheduleDate = () => {
                 const val = document.getElementById('releaseSchedule').value;
-                document.getElementById('datePicker').style.display = val === 'schedule' ? 'block' : 'none';
+                const datePicker = document.getElementById('datePicker');
+                
+                if (val === 'schedule') {
+                    datePicker.classList.remove('hidden');
+                } else {
+                    datePicker.classList.add('hidden');
+                }
             };
         } 
         
