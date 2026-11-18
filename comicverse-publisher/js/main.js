@@ -163,8 +163,8 @@ document.addEventListener('DOMContentLoaded', () => {
                             <button class="btn-icon text-danger" onclick="removeChapter(${chap.id})"><i class="fas fa-trash"></i> Delete</button>
                         </div>
                         <div class="reorder-grid">
-                            <div class="page-item" draggable="true"><span class="page-num">Page 1</span><div class="page-placeholder">Image</div></div>
-                            <div class="page-item" draggable="true"><span class="page-num">Page 2</span><div class="page-placeholder">Image</div></div>
+                            <div class="page-item" draggable="true"><span class="page-num">Page 1</span><div class="page-placeholder"><img style="width: 100px; height:130px;" src="img/spidy.jpg" alt="Description of the image"></div></div>
+                            <div class="page-item" draggable="true"><span class="page-num">Page 2</span><div class="page-placeholder"><img style="width: 100px; height:130px;" src="img/2.jpg" alt="Description of the image"></div></div>
                         </div>
                     `;
                     container.appendChild(card);
