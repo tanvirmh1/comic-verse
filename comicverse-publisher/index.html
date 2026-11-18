@@ -16,7 +16,6 @@
     <link rel="stylesheet" href="css/chapters.css">
     <link rel="stylesheet" href="css/analytics.css">
     <link rel="stylesheet" href="css/comments.css">
-    <link rel="stylesheet" href="css/application.css">
 </head>
 <body>
 
@@ -31,9 +30,9 @@
                 <a href="pages/dashboard.html" class="nav-link active" data-target="dashboard"><i class="fas fa-home"></i> Dashboard</a>
                 <a href="pages/series.html" class="nav-link" data-target="series"><i class="fas fa-book"></i> Series Management</a>
                 <a href="pages/upload.html" class="nav-link" data-target="upload"><i class="fas fa-upload"></i> Chapter Upload</a>
-                <a href="#" class="nav-link" data-target="chapters"><i class="fas fa-layer-group"></i> Manage Chapters</a>
-                <a href="#" class="nav-link" data-target="analytics"><i class="fas fa-chart-line"></i> Analytics</a>
-                <a href="#" class="nav-link" data-target="comments"><i class="fas fa-comments"></i> Reader Comments</a>
+                <a href="pages/chapters.html" class="nav-link" data-target="chapters"><i class="fas fa-layer-group"></i> Manage Chapters</a>
+                <a href="pages/analytics.html" class="nav-link" data-target="analytics"><i class="fas fa-chart-line"></i> Analytics</a>
+                <a href="pages/comments.html" class="nav-link" data-target="comments"><i class="fas fa-comments"></i> Reader Comments</a>
             </nav>
             <div class="logout-container">
                 <button class="btn-logout" onclick="alert('Logged out')"><i class="fas fa-sign-out-alt"></i> Logout</button>
@@ -42,14 +41,12 @@
 
         <!-- Dynamic Content Area -->
         <main class="main-content" id="mainContent">
-            <!-- Content will be loaded here via JS -->
             <div style="display:flex; justify-content:center; align-items:center; height:100%;">
                 <h2>Loading Dashboard...</h2>
             </div>
         </main>
     </div>
 
-    <!-- Global JS -->
     <script src="js/main.js"></script>
 </body>
 </html>
