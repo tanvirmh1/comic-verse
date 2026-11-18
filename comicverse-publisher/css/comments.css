@@ -1,0 +1,16 @@
+.comment-box { 
+    border-bottom: 1px solid #2d2844; 
+    padding-bottom: 15px; 
+}
+
+.comment-box p { 
+    margin: 10px 0; 
+    color: #a09eb0; 
+}
+
+.reply-input { 
+    padding: 8px; 
+    font-size: 0.85rem; 
+    width: 60%; 
+    margin-bottom: 5px; 
+}

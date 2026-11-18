@@ -1,0 +1,41 @@
+.reorder-grid { 
+    display: flex; 
+    gap: 15px; 
+    margin-top: 15px; 
+}
+
+.page-item { 
+    background: #12101c; 
+    padding: 10px; 
+    border-radius: 8px; 
+    border: 1px solid #2d2844; 
+    cursor: grab; 
+    transition: 0.2s; 
+}
+
+.page-item:active { 
+    cursor: grabbing; 
+}
+
+.page-item.dragging { 
+    opacity: 0.5; 
+    border: 2px dashed #8b5cf6; 
+}
+
+.page-placeholder { 
+    width: 100px; 
+    height: 140px; 
+    background: #2a2640; 
+    border-radius: 4px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    color: gray; 
+    margin-top: 5px; 
+}
+
+.page-num { 
+    font-size: 12px; 
+    color: #8b5cf6; 
+    font-weight: bold; 
+}
