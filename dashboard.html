@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>ComicVerse - Admin Dashboard</title>
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
-     <aside class="sidebar">
+    <aside class="sidebar">
         <div class="logo">
             <h2>ComicVerse</h2>
             <p>Admin Panel</p>
         </div>
 
         <nav>
-            <a href="dashboard.html">Dashboard</a>
+            <a href="dashboard.html" class="active">Dashboard</a>
             <a href="users.html">User Management</a>
             <a href="content.html">Content Management</a>
             <a href="moderation.html">Moderation</a>
@@ -33,48 +33,61 @@
             <p>Welcome, Admin!</p>
         </header>
 
-
         <section class="dashboard-section">
-
             <h2>Website Overview</h2>
 
             <div class="card-container">
-
                 <div class="dashboard-card">
                     <h3>Total Users</h3>
-                    <p>0</p>
+                    <p id="stat-users">0</p>
                 </div>
 
                 <div class="dashboard-card">
                     <h3>Total Comics</h3>
-                    <p>0</p>
+                    <p id="stat-series">0</p>
                 </div>
 
                 <div class="dashboard-card">
                     <h3>Pending Approvals</h3>
-                    <p>0</p>
+                    <p id="stat-pending">0</p>
                 </div>
 
                 <div class="dashboard-card">
                     <h3>Reported Content</h3>
-                    <p>0</p>
+                    <p id="stat-reports">0</p>
                 </div>
-
             </div>
-
         </section>
 
         <section class="dashboard-section">
-
-            <h2>Recent Activity</h2>
-
-            <div class="activity-box">
-                <p>No recent activity available.</p>
+            <h2>Pending Publisher Applications</h2>
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Applicant</th>
+                            <th>Email</th>
+                            <th>Message</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="pending-apps-body">
+                    </tbody>
+                </table>
             </div>
-
         </section>
+
+        <section class="dashboard-section">
+    <h2>Recent Activity</h2>
+    <div class="activity-box">
+        <ul id="activity-list" class="activity-list">
+        </ul>
+    </div>
+</section>
 
     </main>
 
+    <script src="dashboard.js"></script>
 </body>
 </html>
