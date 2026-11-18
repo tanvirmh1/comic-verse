@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ComicVerse Admin — User Management</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="users.css">
 </head>
 <body>
-
 
     <aside class="sidebar">
         <div class="logo">
@@ -17,7 +17,7 @@
 
         <nav>
             <a href="dashboard.html">Dashboard</a>
-            <a href="users.html">User Management</a>
+            <a href="users.html" class="active">User Management</a>
             <a href="content.html">Content Management</a>
             <a href="moderation.html">Moderation</a>
             <a href="announcements.html">Announcements</a>
@@ -26,14 +26,12 @@
         <a href="#" class="logout-link">Logout</a>
     </aside>
 
-
     <main class="main-content">
 
         <header class="top-header">
             <h1>User Management</h1>
             <p>Review registered users and approve publisher applications.</p>
         </header>
-
 
         <section class="dashboard-section">
             <h2 class="section-title">All Users</h2>
@@ -42,86 +40,50 @@
                 <button class="filter-btn active-filter" data-filter="all">All</button>
                 <button class="filter-btn" data-filter="reader">Readers</button>
                 <button class="filter-btn" data-filter="publisher">Publishers</button>
+                <button class="filter-btn" data-filter="suspended">Suspended</button>
             </div>
 
-
-            <table class="data-table" id="user-table">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Role</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr data-role="reader">
-                        <td>1</td>
-                        <td>Rafid HNossain Rafi</td>
-                        <td>rafi420@gmail.com</td>
-                        <td>Reader</td>
-                        <td><span class="status-active">Active</span></td>
-                    </tr>
-
-                    <tr data-role="reader">
-                        <td>2</td>
-                        <td>Musfiqun Nobi Mahim</td>
-                        <td>mahim520@gmail.com</td>
-                        <td>Reader</td>
-                        <td><span class="status-active">Active</span></td>
-                    </tr>
-
-                    <tr data-role="publisher">
-                        <td>3</td>
-                        <td> Umbrella Corporation</td>
-                        <td> UC@gmail.com</td>
-                        <td>Publisher</td>
-                        <td><span class="status-active">Active</span></td>
-                    </tr>
-
-                    <tr data-role="publisher">
-                        <td>4</td>
-                        <td>Shorline</td>
-                        <td>shoreline@gmail.com</td>
-                        <td>Publisher</td>
-                        <td><span class="status-pending">Pending</span></td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-wrap">
+                <table class="data-table" id="user-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="user-tbody">
+                    </tbody>
+                </table>
+            </div>
         </section>
-
 
         <section class="dashboard-section">
             <h2 class="section-title">Publisher Applications</h2>
 
-
-            <table class="data-table" id="application-table">
-                <thead>
-                    <tr>
-                        <th>Applicant</th>
-                        <th>Email</th>
-                        <th>Message</th>
-                        <th>Status</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>ufotable Inc</td>
-                        <td>info@ufotable.com</td>
-                        <td>I want to publish a dark fantasy and action comic.</td>
-                        <td><span class="status-pending">Pending</span></td>
-                        <td>
-                            <button class="action-btn approve-btn">Approve</button>
-                            <button class="action-btn reject-btn">Reject</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-wrap">
+                <table class="data-table" id="application-table">
+                    <thead>
+                        <tr>
+                            <th>Applicant</th>
+                            <th>Email</th>
+                            <th>Message</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="app-tbody">
+                    </tbody>
+                </table>
+            </div>
         </section>
 
     </main>
+
+    <script src="users.js"></script>
 
 </body>
 </html>
