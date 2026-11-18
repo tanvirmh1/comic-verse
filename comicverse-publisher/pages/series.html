@@ -13,12 +13,48 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><strong>Shadow Realm Chronicles</strong><br><span style="font-size:12px;color:gray;">Action, Fantasy</span></td>
-                    <td>Comic</td>
+                    <td><strong class="series-title">Shadow Realm Chronicles</strong><br><span class="series-genre" style="font-size:12px;color:gray;">Action, Fantasy</span></td>
+                    <td class="series-type">Comic</td>
                     <td><span class="badge badge-success">Approved</span></td>
                     <td>
-                        <button class="btn-icon"><i class="fas fa-edit"></i></button>
-                        <button class="btn-icon text-danger" onclick="this.closest('tr').remove()"><i class="fas fa-trash"></i></button>
+                        <button class="btn-icon" onclick="editSeries(this)"><i class="fas fa-edit"></i></button>
+                        <button class="btn-icon text-danger" onclick="this.closest('tr').remove(); updateDashboardStats();"><i class="fas fa-trash"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong class="series-title">The Last Scribe</strong><br><span class="series-genre" style="font-size:12px;color:gray;">Mystery, Drama</span></td>
+                    <td class="series-type">Novel</td>
+                    <td><span class="badge badge-danger">Rejected</span></td>
+                    <td>
+                        <button class="btn-icon" onclick="editSeries(this)"><i class="fas fa-edit"></i></button>
+                        <button class="btn-icon text-danger" onclick="this.closest('tr').remove(); updateDashboardStats();"><i class="fas fa-trash"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong class="series-title">Moonlit Sword Saga</strong><br><span class="series-genre" style="font-size:12px;color:gray;">Action</span></td>
+                    <td class="series-type">Novel</td>
+                    <td><span class="badge badge-success">Approved</span></td>
+                    <td>
+                        <button class="btn-icon" onclick="editSeries(this)"><i class="fas fa-edit"></i></button>
+                        <button class="btn-icon text-danger" onclick="this.closest('tr').remove(); updateDashboardStats();"><i class="fas fa-trash"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong class="series-title">Iron Blossom</strong><br><span class="series-genre" style="font-size:12px;color:gray;">Fantasy</span></td>
+                    <td class="series-type">Comic</td>
+                    <td><span class="badge badge-warning">Pending</span></td>
+                    <td>
+                        <button class="btn-icon" onclick="editSeries(this)"><i class="fas fa-edit"></i></button>
+                        <button class="btn-icon text-danger" onclick="this.closest('tr').remove(); updateDashboardStats();"><i class="fas fa-trash"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong class="series-title">Void Monarch</strong><br><span class="series-genre" style="font-size:12px;color:gray;">Sci-Fi</span></td>
+                    <td class="series-type">Novel</td>
+                    <td><span class="badge badge-warning">Pending</span></td>
+                    <td>
+                        <button class="btn-icon" onclick="editSeries(this)"><i class="fas fa-edit"></i></button>
+                        <button class="btn-icon text-danger" onclick="this.closest('tr').remove(); updateDashboardStats();"><i class="fas fa-trash"></i></button>
                     </td>
                 </tr>
             </tbody>
@@ -29,7 +65,8 @@
     <div id="seriesModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
-            <h2 style="margin-bottom:20px;">Create New Series</h2>
+            <h2 id="modalTitle" style="margin-bottom:20px;">Create New Series</h2>
+            <input type="hidden" id="editRowIndex" value="-1">
             <div class="form-group">
                 <label>Title</label>
                 <input type="text" id="newSeriesTitle" placeholder="Series Title">
@@ -38,7 +75,11 @@
                 <label>Type</label>
                 <select id="newSeriesType"><option>Comic</option><option>Novel</option></select>
             </div>
-            <button class="btn-primary" onclick="addNewSeries()">Save Series</button>
+            <div class="form-group">
+                <label>Genres</label>
+                <input type="text" id="newSeriesGenre" placeholder="Action, Fantasy">
+            </div>
+            <button class="btn-primary" onclick="saveSeries()">Save Series</button>
         </div>
     </div>
 </div>
