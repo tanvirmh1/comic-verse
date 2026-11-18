@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ComicVerse · Moderation</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="moderation.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="logo">
+            <h2>ComicVerse</h2>
+            <p>Admin Panel</p>
+        </div>
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="users.html">User Management</a>
+            <a href="content.html">Content Management</a>
+            <a href="moderation.html" class="active">Moderation</a>
+            <a href="announcements.html">Announcements</a>
+        </nav>
+        <a href="#" class="logout-link">Logout</a>
+    </aside>
+
+    <main class="main-content">
+        <header class="top-header">
+            <h1>Moderation</h1>
+            <p>Review reported comments and content, then dismiss, warn or delete.</p>
+        </header>
+
+        <section class="dashboard-section">
+            <h2>Report Overview</h2>
+            <div class="card-container">
+                <div class="dashboard-card">
+                    <h3>Total Reports</h3>
+                    <p id="stat-total">0</p>
+                </div>
+                <div class="dashboard-card">
+                    <h3>Pending Review</h3>
+                    <p id="stat-pending">0</p>
+                </div>
+                <div class="dashboard-card">
+                    <h3>Resolved</h3>
+                    <p id="stat-resolved">0</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="dashboard-section">
+            <h2>Reported Items</h2>
+
+            <div class="filter-bar">
+                <button class="filter-btn active-filter" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="comment">Comments</button>
+                <button class="filter-btn" data-filter="content">Content</button>
+                <button class="filter-btn" data-filter="resolved">Resolved</button>
+            </div>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Type</th>
+                            <th>Reported By</th>
+                            <th>Target</th>
+                            <th>Reason</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="report-tbody"></tbody>
+
+
+
+
+                </table>
+            </div>
+        </section>
+    </main>
+    <script src="moderation.js"></script>
+
+</body>
+</html>

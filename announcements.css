@@ -1,0 +1,74 @@
+.announcement-form {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-dark);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+}
+
+.announcement-form .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.announcement-form .form-control {
+    background-color: var(--bg-input);
+    border: 1px solid var(--border-dark);
+    color: var(--text-main);
+    padding: 14px 16px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.announcement-form .form-control:focus {
+    border-color: var(--accent-purple);
+    box-shadow: 0 0 0 3px var(--shadow-glow);
+    outline: none;
+}
+
+.announcement-form textarea.form-control {
+    min-height: 140px;
+    resize: vertical;
+    line-height: 1.6;
+}
+
+.announcement-form .btn-primary {
+    width: 100%;
+    padding: 14px;
+    font-size: 1.05rem;
+    margin-top: 10px;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: var(--bg-input);
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid var(--border-dark);
+    margin-bottom: 20px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--accent-purple);
+    cursor: pointer;
+}
+
+.checkbox-group label {
+    margin-bottom: 0;
+    cursor: pointer;
+    color: var(--text-main);
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    .announcement-form {
+        padding: 20px;
+    }
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ComicVerse · Content Management</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="content.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="logo">
+            <h2>ComicVerse</h2>
+            <p>Admin Panel</p>
+        </div>
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="users.html">User Management</a>
+            <a href="content.html" class="active">Content Management</a>
+            <a href="moderation.html">Moderation</a>
+            <a href="announcements.html">Announcements</a>
+        </nav>
+        <a href="#" class="logout-link">Logout</a>
+    </aside>
+
+    <main class="main-content">
+        <header class="top-header">
+            <h1>Content Management</h1>
+            <p>Review submitted comics &amp; novels, manage chapters and tags.</p>
+        </header>
+
+        <section class="dashboard-section">
+            <h2>Pending Approvals</h2>
+
+            <div class="filter-bar">
+                <button class="filter-btn active-filter" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="comic">Comics</button>
+                <button class="filter-btn" data-filter="novel">Novels</button>
+            </div>
+
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>Publisher</th>
+                            <th>Type</th>
+                            <th>Chapters</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="pending-tbody"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="dashboard-section">
+            <h2>All Series</h2>
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>Publisher</th>
+                            <th>Type</th>
+                            <th>Chapters</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="all-tbody"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="content.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,27 @@
+.filter-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filter-btn {
+    background-color: var(--bg-card);
+    color: var(--text-muted);
+    border: 1px solid var(--border-dark);
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.2s;
+    font-family: inherit;
+}
+
+.filter-btn:hover {
+    background-color: var(--bg-input);
+}
+
+.filter-btn.active-filter {
+    background-color: var(--accent-purple);
+    color: white;
+    border-color: var(--accent-purple);
+}

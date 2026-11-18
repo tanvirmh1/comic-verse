@@ -1,0 +1,32 @@
+
+.activity-box {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-dark);
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.activity-box p {
+    color: var(--text-muted);
+}
+
+.activity-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.activity-list li {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    border-bottom: 1px solid var(--border-dark);
+    padding-bottom: 12px;
+    color: var(--text-main);
+}
+
+.activity-list li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}

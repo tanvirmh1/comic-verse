@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ComicVerse · Announcements</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="announcements.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="logo">
+            <h2>ComicVerse</h2>
+            <p>Admin Panel</p>
+        </div>
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="users.html">User Management</a>
+            <a href="content.html">Content Management</a>
+            <a href="moderation.html">Moderation</a>
+            <a href="announcements.html" class="active">Announcements</a>
+        </nav>
+        <a href="#" class="logout-link">Logout</a>
+    </aside>
+
+    <main class="main-content">
+        <header class="top-header">
+            <h1>Announcements And Featured Content</h1>
+        </header>
+
+        <section class="dashboard-section">
+            <h2>Post New Announcement</h2>
+            
+            <div class="announcement-form">
+                <div class="form-group">
+                    <label for="ann-title">Announcement Title</label>
+                    <input type="text" id="ann-title" class="form-control" placeholder="Give the Title">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="ann-body">Message</label>
+                    <textarea id="ann-body" class="form-control" placeholder="Write the announcement details here..."></textarea>
+                </div>
+                
+                <div class="checkbox-group">
+                    <input type="checkbox" id="ann-featured">
+                    <label for="ann-featured">Pin this to the Featured Banner on the homepage</label>
+                </div>
+                
+                <button class="btn-primary" id="post-ann-btn">Post Announcement</button>
+            </div>
+        </section>
+
+        <section class="dashboard-section">
+            <h2>Recent Announcements</h2>
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>Message</th>
+                            <th>Featured</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ann-tbody">
+
+
+
+
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+
+    <script src="announcements.js"></script>
+</body>
+</html>
