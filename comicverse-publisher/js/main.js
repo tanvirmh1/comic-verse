@@ -127,9 +127,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 const datePicker = document.getElementById('datePicker');
                 
                 if (val === 'schedule') {
-                    datePicker.style.display = 'block'; // Show it
+                    datePicker.style.display = 'block'; 
                 } else {
-                    datePicker.style.display = 'none';  // Hide it
+                    datePicker.style.display = 'none';  
                 }
             };
             window.submitChapterData = () => {
