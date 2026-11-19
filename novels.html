@@ -1,43 +1,81 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Browse written stories and follow your favourite ongoing or completed novels.">
-  <title>Novels — ComicVerse</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header class="site-header">
-    <a class="brand" href="index.html">ComicVerse</a>
-    <nav class="main-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="comics.html">Comics</a><a class="active" href="novels.html">Novels</a><a href="genres.html">Genres</a></nav>
-    <form class="search-form" id="searchForm" role="search"><input id="searchInput" type="search" placeholder="Search series..." aria-label="Search series"></form>
-    <div class="header-actions"><a class="login-link" href="#" data-demo="Login">Login</a><a class="register-link" href="#" data-demo="Register">Register</a></div>
-    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
-  </header>
-  <main class="page-shell">
-    <section class="collection-intro"><p class="eyebrow">Explore ComicVerse</p><h1>Explore Novels</h1><p>Browse written stories and follow your favourite ongoing or completed novels.</p></section>
-    
-    <div class="collection-toolbar">
-      <span class="result-count" id="collectionCount">Loading titles...</span>
-      <select id="collectionSort" aria-label="Sort titles">
-        <option value="popular">Most popular</option><option value="latest">Latest updates</option><option value="title">Title A–Z</option>
-      </select>
-    </div>
-    <div class="filter-chips" id="collectionFilters">
-      <button class="filter-chip active" data-filter="all">All</button>
-      <button class="filter-chip" data-filter="Action">Action</button>
-      <button class="filter-chip" data-filter="Fantasy">Fantasy</button>
-      <button class="filter-chip" data-filter="Adventure">Adventure</button>
-      <button class="filter-chip" data-filter="Romance">Romance</button>
-      <button class="filter-chip" data-filter="Mystery">Mystery</button>
-      <button class="filter-chip" data-filter="Sci-Fi">Sci-Fi</button>
-    </div>
-    <div class="collection-grid" id="collectionGrid"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Browse written stories and follow your favourite ongoing or completed novels."
+    />
+    <title>Novels — ComicVerse</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html">ComicVerse</a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a><a href="comics.html">Comics</a
+        ><a class="active" href="novels.html">Novels</a
+        ><a href="genres.html">Genres</a>
+      </nav>
+      <form class="search-form" id="searchForm" role="search">
+        <input
+          id="searchInput"
+          type="search"
+          placeholder="Search series..."
+          aria-label="Search series"
+        />
+      </form>
+      <div class="header-actions" id="accountArea"></div>
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Toggle navigation"
+      >
+        ☰
+      </button>
+    </header>
+    <main class="page-shell">
+      <section class="collection-intro">
+        <p class="eyebrow">Explore ComicVerse</p>
+        <h1>Explore Novels</h1>
+        <p>
+          Browse written stories and follow your favourite ongoing or completed
+          novels.
+        </p>
+      </section>
 
-  </main>
-  <footer class="site-footer">© 2026 ComicVerse · Your next adventure starts here.</footer>
-  <script>window.COMICVERSE_PAGE = "novels";</script>
-  <script src="app.js"></script>
-</body></html>
+      <div class="collection-toolbar">
+        <span class="result-count" id="collectionCount">Loading titles...</span>
+        <select id="collectionSort" aria-label="Sort titles">
+          <option value="popular">Most popular</option>
+          <option value="latest">Latest updates</option>
+          <option value="title">Title A–Z</option>
+        </select>
+      </div>
+      <div class="filter-chips" id="collectionFilters">
+        <button class="filter-chip active" data-filter="all">All</button>
+        <button class="filter-chip" data-filter="Action">Action</button>
+        <button class="filter-chip" data-filter="Fantasy">Fantasy</button>
+        <button class="filter-chip" data-filter="Adventure">Adventure</button>
+        <button class="filter-chip" data-filter="Romance">Romance</button>
+        <button class="filter-chip" data-filter="Mystery">Mystery</button>
+        <button class="filter-chip" data-filter="Sci-Fi">Sci-Fi</button>
+      </div>
+      <div class="collection-grid" id="collectionGrid"></div>
+    </main>
+    <footer class="site-footer">
+      © 2026 ComicVerse · Your next adventure starts here.
+    </footer>
+    <script>
+      window.COMICVERSE_PAGE = "novels";
+    </script>
+    <script src="app.js"></script>
+  </body>
+</html>

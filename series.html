@@ -1,59 +1,89 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="ComicVerse series details, chapters and reader comments." />
-  <title>Series — ComicVerse</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <header class="site-header">
-    <a class="brand" href="index.html">ComicVerse</a>
-    <nav class="main-nav" aria-label="Main navigation">
-      <a href="index.html">Home</a><a href="comics.html">Comics</a>
-      <a href="novels.html">Novels</a><a href="genres.html">Genres</a>
-    </nav>
-    <form class="search-form" id="searchForm" role="search"><input id="searchInput" type="search" placeholder="Search series..." aria-label="Search series"></form>
-    <div class="header-actions"><span class="user-name">Rafi</span><span class="avatar">R</span></div>
-    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="ComicVerse series details and chapters."
+    />
+    <title>Series — ComicVerse</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html">ComicVerse</a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a><a href="comics.html">Comics</a>
+        <a href="novels.html">Novels</a><a href="genres.html">Genres</a>
+      </nav>
+      <form class="search-form" id="searchForm" role="search">
+        <input
+          id="searchInput"
+          type="search"
+          placeholder="Search series..."
+          aria-label="Search series"
+        />
+      </form>
+      <div class="header-actions" id="accountArea"></div>
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Toggle navigation"
+      >
+        ☰
+      </button>
+    </header>
 
-  <main class="page-shell detail-layout">
-    <section class="series-main">
-      <div class="series-overview">
-        <div class="detail-cover cover-art cover-shadow" id="detailCover"></div>
-        <div class="series-info">
-          <h1 id="seriesTitle">Shadow Realm Chronicles</h1>
-          <p class="series-meta"><span class="stars">★★★★★</span> <strong id="seriesRating">4.7 (1.2k)</strong><span>·</span><span id="seriesStatus">Ongoing</span><span>·</span><span id="seriesType">Comic</span></p>
-          <div class="tag-list" id="seriesGenres"></div>
-          <p class="series-description" id="seriesDescription"></p>
-          <div class="series-actions">
-            <a class="primary-button" href="#chapters" id="readFirst">▶ Read First</a>
-            <a class="secondary-button" href="#chapters" id="continueReading">Continue Ch. 12</a>
-            <button class="secondary-button" id="bookmarkButton">♥ Bookmark</button>
+    <main class="page-shell detail-layout">
+      <section class="series-main">
+        <div class="series-overview">
+          <div
+            class="detail-cover cover-art cover-shadow"
+            id="detailCover"
+          ></div>
+          <div class="series-info">
+            <h1 id="seriesTitle">Shadow Realm Chronicles</h1>
+            <p class="series-meta">
+              <span class="stars">★★★★★</span>
+              <strong id="seriesRating">4.7 (1.2k)</strong><span>·</span
+              ><span id="seriesStatus">Ongoing</span><span>·</span
+              ><span id="seriesType">Comic</span>
+            </p>
+            <div class="tag-list" id="seriesGenres"></div>
+            <p class="series-description" id="seriesDescription"></p>
+            <div class="series-actions">
+              <a class="primary-button" href="#chapters" id="readFirst"
+                >▶ Read First</a
+              >
+              <a class="secondary-button" href="#chapters" id="continueReading"
+                >Continue Ch. 12</a
+              >
+              <button class="secondary-button" id="bookmarkButton">
+                ♥ Bookmark
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-      <section class="chapters-section" id="chapters">
-        <div class="section-heading"><h2>Chapters (<span id="chapterCount">45</span>)</h2><select id="chapterSort" aria-label="Sort chapters"><option value="desc">Newest first</option><option value="asc">Oldest first</option></select></div>
-        <div class="chapter-list" id="chapterList"></div>
+        <section class="chapters-section" id="chapters">
+          <div class="section-heading">
+            <h2>Chapters (<span id="chapterCount">45</span>)</h2>
+            <select id="chapterSort" aria-label="Sort chapters">
+              <option value="desc">Newest first</option>
+              <option value="asc">Oldest first</option>
+            </select>
+          </div>
+          <div class="chapter-list" id="chapterList"></div>
+        </section>
       </section>
-    </section>
-
-    <aside class="comments-panel">
-      <h2>Comments (<span id="commentCount">128</span>)</h2>
-      <div class="comment-list" id="commentList">
-        <article class="comment"><span class="comment-avatar"></span><div><i></i><i class="short"></i></div></article>
-        <article class="comment"><span class="comment-avatar"></span><div><i></i><i class="short"></i></div></article>
-      </div>
-      <form class="comment-form" id="commentForm"><input id="commentInput" type="text" placeholder="Write a comment..." aria-label="Write a comment" required><button type="submit" aria-label="Post comment">➤</button></form>
-    </aside>
-  </main>
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <script src="app.js"></script>
-</body>
+    </main>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
 </html>

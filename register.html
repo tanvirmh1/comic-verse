@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Account - ComicVerse</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="auth-page">
+    <header class="site-header">
+      <a class="brand" href="index.html">ComicVerse</a>
+      <div class="header-actions" id="accountArea"></div>
+    </header>
+    <main class="auth-shell">
+      <form class="auth-card" id="registerForm">
+        <a class="auth-back" href="index.html">← Back to Home</a>
+        <h1>Create Account</h1>
+        <p class="auth-subtitle">
+          Join ComicVerse and keep track of your reading.
+        </p>
+        <label for="registerEmail">Gmail / Email</label>
+        <input
+          id="registerEmail"
+          type="email"
+          placeholder="Enter your email"
+          required
+        />
+        <label for="registerUsername">Username</label>
+        <input
+          id="registerUsername"
+          type="text"
+          placeholder="Choose a username"
+          required
+        />
+        <label for="registerPassword">Password</label>
+        <input
+          id="registerPassword"
+          type="password"
+          placeholder="Create a password"
+          required
+        />
+        <label for="confirmPassword">Confirm Password</label>
+        <input
+          id="confirmPassword"
+          type="password"
+          placeholder="Enter your password again"
+          required
+        />
+        <p class="auth-error" id="registerError"></p>
+        <button class="primary-button auth-submit" type="submit">
+          Create Account
+        </button>
+        <p class="auth-switch">
+          Already have an account? <a href="login.html">Login</a>
+        </p>
+      </form>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -219,7 +219,6 @@ function showDetailsPage() {
   getElement("seriesStatus").innerHTML = comic.status;
   getElement("seriesType").innerHTML = comic.type;
   getElement("chapterCount").innerHTML = comic.chapter;
-  getElement("commentCount").innerHTML = comic.comments;
   getElement("seriesDescription").innerHTML = comic.description;
   getElement("detailCover").innerHTML =
     '<img src="' + comic.cover + '" alt="">';
@@ -248,22 +247,6 @@ function showDetailsPage() {
     } else {
       this.innerHTML = "♥ Bookmark";
       showMessage("Removed from bookmarks");
-    }
-  };
-
-  getElement("commentForm").onsubmit = function (event) {
-    event.preventDefault();
-    var input = getElement("commentInput");
-    if (input.value != "") {
-      var commentList = getElement("commentList");
-      var newComment = document.createElement("article");
-      newComment.className = "comment";
-      newComment.textContent = input.value;
-      commentList.appendChild(newComment);
-      getElement("commentCount").innerHTML =
-        Number(getElement("commentCount").innerHTML) + 1;
-      input.value = "";
-      showMessage("Comment added");
     }
   };
 }
@@ -525,4 +508,115 @@ window.onload = function () {
   showGenresPage();
   setupSearch();
   setupMenu();
+  showAccountArea();
+  setupRegistration();
+  setupLogin();
 };
+
+function getSavedUsers() {
+  var users = localStorage.getItem("comicverseUsers");
+  if (users == null) {
+    return [];
+  }
+  return JSON.parse(users);
+}
+
+function showAccountArea() {
+  var area = getElement("accountArea");
+  if (area == null) {
+    return;
+  }
+
+  var currentUser = localStorage.getItem("comicverseCurrentUser");
+  if (currentUser == null) {
+    area.innerHTML =
+      '<a class="login-link" href="login.html">Login</a><a class="register-link" href="register.html">Register</a>';
+  } else {
+    var firstLetter = currentUser.substring(0, 1).toUpperCase();
+    area.innerHTML =
+      '<div class="account-profile"><span class="user-name" id="accountUsername"></span><span class="avatar" id="accountAvatar"></span><button class="logout-link" id="logoutButton" type="button">Logout</button></div>';
+    getElement("accountUsername").textContent = currentUser;
+    getElement("accountAvatar").textContent = firstLetter;
+    getElement("logoutButton").onclick = function () {
+      localStorage.removeItem("comicverseCurrentUser");
+      window.location.href = "index.html";
+    };
+  }
+}
+
+function setupRegistration() {
+  var form = getElement("registerForm");
+  if (form == null) {
+    return;
+  }
+
+  form.onsubmit = function (event) {
+    event.preventDefault();
+
+    var email = getElement("registerEmail").value.trim().toLowerCase();
+    var username = getElement("registerUsername").value.trim();
+    var password = getElement("registerPassword").value;
+    var confirmPassword = getElement("confirmPassword").value;
+    var error = getElement("registerError");
+    var users = getSavedUsers();
+    var i;
+
+    error.textContent = "";
+
+    if (
+      email == "" ||
+      username == "" ||
+      password == "" ||
+      confirmPassword == ""
+    ) {
+      error.textContent = "Please fill in all fields.";
+      return;
+    }
+    if (password.length < 6) {
+      error.textContent = "Password must be at least 6 characters.";
+      return;
+    }
+    if (password != confirmPassword) {
+      error.textContent = "Passwords do not match.";
+      return;
+    }
+    for (i = 0; i < users.length; i++) {
+      if (users[i].email == email) {
+        error.textContent = "An account with this email already exists.";
+        return;
+      }
+    }
+
+    users.push({ email: email, username: username, password: password });
+    localStorage.setItem("comicverseUsers", JSON.stringify(users));
+    localStorage.setItem("comicverseCurrentUser", username);
+    window.location.href = "index.html";
+  };
+}
+
+function setupLogin() {
+  var form = getElement("loginForm");
+  if (form == null) {
+    return;
+  }
+
+  form.onsubmit = function (event) {
+    event.preventDefault();
+
+    var email = getElement("loginEmail").value.trim().toLowerCase();
+    var password = getElement("loginPassword").value;
+    var error = getElement("loginError");
+    var users = getSavedUsers();
+    var i;
+
+    error.textContent = "";
+    for (i = 0; i < users.length; i++) {
+      if (users[i].email == email && users[i].password == password) {
+        localStorage.setItem("comicverseCurrentUser", users[i].username);
+        window.location.href = "index.html";
+        return;
+      }
+    }
+    error.textContent = "Incorrect email or password.";
+  };
+}

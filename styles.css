@@ -508,6 +508,7 @@ p {
   transform: translate(-50%, 0);
 }
 
+/* Collection pages: Comics, Novels and Genres */
 .collection-intro {
   padding: 8px 0 20px;
 }
@@ -610,6 +611,7 @@ p {
   color: white;
 }
 
+/*================== Comic images: ==================*/
 .cover-art {
   background: transparent;
   border: 0;
@@ -672,4 +674,101 @@ p {
   gap: 12px;
   max-width: 760px;
   margin: 20px auto;
+}
+
+/*==  ========== Login and registration pages== ===  */
+.auth-page {
+  min-height: 100vh;
+}
+.auth-shell {
+  min-height: calc(100vh - 65px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 35px 20px;
+}
+.auth-card {
+  width: 100%;
+  max-width: 410px;
+  padding: 30px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.22);
+}
+.auth-back {
+  display: inline-block;
+  color: var(--purple-light);
+  font-size: 12px;
+  margin-bottom: 22px;
+}
+.auth-card h1 {
+  font-size: 25px;
+  margin: 0 0 8px;
+}
+.auth-subtitle {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+  margin-bottom: 22px;
+}
+.auth-card label {
+  display: block;
+  color: #ddd8e9;
+  font-size: 12px;
+  margin: 14px 0 7px;
+}
+.auth-card input {
+  display: block;
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  outline: 0;
+  background: #302b46;
+  color: white;
+  font-size: 12px;
+}
+.auth-card input:focus {
+  border-color: var(--purple-light);
+}
+.auth-submit {
+  width: 100%;
+  margin-top: 12px;
+  cursor: pointer;
+}
+.auth-error {
+  min-height: 16px;
+  color: #ff8585;
+  font-size: 11px;
+  margin: 10px 0 0;
+}
+.auth-switch {
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+  margin: 20px 0 0;
+}
+.auth-switch a {
+  color: var(--purple-light);
+  font-weight: 700;
+}
+.account-profile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.account-profile .avatar {
+  border: 0;
+  color: white;
+  cursor: default;
+}
+.logout-link {
+  color: #d8d2e8;
+  background: #302b46;
+  border: 0;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 11px;
+  cursor: pointer;
 }

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - ComicVerse</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="auth-page">
+    <header class="site-header">
+      <a class="brand" href="index.html">ComicVerse</a>
+      <div class="header-actions" id="accountArea"></div>
+    </header>
+    <main class="auth-shell">
+      <form class="auth-card" id="loginForm">
+        <a class="auth-back" href="index.html">← Back to Home</a>
+        <h1>Welcome Back</h1>
+        <p class="auth-subtitle">Log in to continue reading on ComicVerse.</p>
+        <label for="loginEmail">Email</label>
+        <input
+          id="loginEmail"
+          type="email"
+          placeholder="Enter your email"
+          required
+        />
+        <label for="loginPassword">Password</label>
+        <input
+          id="loginPassword"
+          type="password"
+          placeholder="Enter your password"
+          required
+        />
+        <p class="auth-error" id="loginError"></p>
+        <button class="primary-button auth-submit" type="submit">Login</button>
+        <p class="auth-switch">
+          Don't have an account? <a href="register.html">Create one</a>
+        </p>
+      </form>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
