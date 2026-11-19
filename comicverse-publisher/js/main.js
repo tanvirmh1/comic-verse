@@ -122,9 +122,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById('comic-upload').classList.toggle('hidden', type !== 'comic');
                 document.getElementById('novel-upload').classList.toggle('hidden', type !== 'novel');
             };
-            window.toggleScheduleDate = () => {
+          window.toggleScheduleDate = () => {
                 const val = document.getElementById('releaseSchedule').value;
-                document.getElementById('datePicker').classList.toggle('hidden', val !== 'schedule');
+                const datePicker = document.getElementById('datePicker');
+                
+                if (val === 'schedule') {
+                    datePicker.style.display = 'block'; // Show it
+                } else {
+                    datePicker.style.display = 'none';  // Hide it
+                }
             };
             window.submitChapterData = () => {
                 const series = document.getElementById('uploadSeries').value;
