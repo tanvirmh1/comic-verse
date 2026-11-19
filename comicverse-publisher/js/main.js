@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     loadPage('dashboard', document.querySelector('[data-target="dashboard"]'));
 
-    // Simple function to count DOM elements and save to sessionStorage
+
     function updateDashboardStats() {
         const rows = document.querySelectorAll('#seriesTable tbody tr');
         let total = rows.length;
@@ -41,17 +41,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Save to simple browser memory
         sessionStorage.setItem('totalSeries', total);
         sessionStorage.setItem('pendingSeries', pending);
     }
 
-    // Expose function globally so HTML onclick can use it
     window.updateDashboardStats = updateDashboardStats;
 
     function initPageScripts(pageName) {
         if (pageName === 'series') {
-            // Update stats immediately when page loads
+
             updateDashboardStats();
             
             window.openModal = () => {
